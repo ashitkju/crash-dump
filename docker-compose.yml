@@ -1,0 +1,31 @@
+version: '2'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    depends_on:
+      - zookeeper
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+  springapp:
+    image: crashdump-app
+    build: .
+    depends_on:
+      - kafka
+      - redis
+    ports:
+      - 8080:8080
+    environment:
+      KAFKA_URL: kafka:9092
+      REDIS_HOST: redis
+      REDIS_PORT: 6379

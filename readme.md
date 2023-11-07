@@ -30,7 +30,7 @@ Your System should be having below things already installed.
 1. If you have not yet checked out this project then please do by below command
 
 ```bash
-  git clone yet to come
+  git clone https://github.com/ashitkju/crash-dump.git
 ```
 2. You need to build the project now by running below command. This step will generate a Jar file of this application which will be helpful in next steps.
 ```bash

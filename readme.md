@@ -56,7 +56,7 @@ You can go to below URL to play around with the Swagger UI.
 ```
 ## Demo
 
-Below are sample request which you can use to play with the API.
+Below are sample request which you can use to play with the API. Also, You have a look at the integration tests as well.
 
 1.
 POST /api/collect
